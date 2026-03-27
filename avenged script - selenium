@@ -1,0 +1,42 @@
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import time
+
+# Abrir navegador
+navegador = webdriver.Chrome()
+
+# Acessar o YouTube normal
+navegador.get("https://www.youtube.com/")
+
+# Colocar o navegador em tela cheia
+navegador.maximize_window()
+
+# Esperar até que o campo de pesquisa esteja presente
+wait = WebDriverWait(navegador, 20)
+campo_pesquisa = wait.until(EC.presence_of_element_located((By.XPATH, "/html/body/ytd-app/div[1]/div[2]/ytd-masthead/div[4]/div[2]/yt-searchbox/div[1]/form/input")))
+
+# Digitar "Bat Country Avenged Sevenfold" no campo de pesquisa e pressionar Enter
+campo_pesquisa.send_keys("Bat Country Avenged Sevenfold")
+campo_pesquisa.send_keys(Keys.RETURN)
+
+# Esperar até que os resultados apareçam
+wait.until(EC.presence_of_all_elements_located((By.XPATH, "//ytd-video-renderer//a[@id='video-title']")))
+
+# Encontrar todos os vídeos de pesquisa
+videos = navegador.find_elements(By.XPATH, "//ytd-video-renderer//a[@id='video-title']")
+
+# Filtrar o vídeo que contém "Bat Country"
+for video in videos:
+    if "Bat Country" in video.text and "Avenged Sevenfold" in video.text:
+        print(f"Clicando no vídeo: {video.text}")
+        video.click()
+        break  # Clicar no primeiro vídeo encontrado
+
+# Esperar 240 segundos (4 minutos) para a música tocar
+time.sleep(240)
+
+# Fechar o navegador após a música terminar
+navegador.quit()
