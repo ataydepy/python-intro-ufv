@@ -1,0 +1,77 @@
+import math
+
+def funcao():
+    k = 109
+    x = float(input("Escolha o valor de x:"))
+    funcao = k * (x**2) + 2 * x + 5
+    return f"O valor da funcao sera {funcao}"
+
+def area_retangulo():
+    base = float(input("Qual a base do retangulo?"))
+    altura = float(input("Qual altura do retangulo?"))
+    return base * altura
+
+def area_triangulo():
+    base = float(input("Qual a base do triangulo?"))
+    altura = float(input("Qual a altura do triagulo?"))
+    return (base * altura) / 2
+
+def area_circulo():
+    raio = float(input("Qual o raio do circulo?"))
+    return math.pi * (raio ** 2)
+
+def media_aritimetica():
+    n1 = float(input("Digite o primeiro numero"))
+    n2 = float(input("Digite o segundo numero"))
+    n3 = float(input("Digite o terceiro numero"))
+    n4 = float(input("Digite o quarto numero"))
+    n5 = float(input("Digite o quinto numero"))
+    return (n1 + n2 + n3 + n4 + n5) / 5
+
+def juros_simples():
+    # j = c * i * t
+    capital = float(input("Qual valor inicial da conta?"))
+    taxa = float(input("Qual a taxa de juros percentual?"))
+    tempo = float(input("Qual o tempo em atraso?"))
+    return capital * taxa * tempo
+   
+def conta_total():
+    # total = j + c
+    capital = float(input("Qual valor inicial da conta?"))
+    taxa = float(input("Qual a taxa de juros percentual?"))
+    tempo = float(input("Qual o tempo em atraso?"))
+    return capital + (capital * taxa * tempo)
+
+def fahrenheit_celsius():
+    fahrenheit = float(input("Qual a temperatura em fahrenheit?"))
+    celsius = (fahrenheit - 32) / 1.8
+    return f"{fahrenheit}°F em Celsius corresponde a {celsius}°C"
+
+opcoes = {
+    "1": funcao,
+    "2a": area_retangulo,
+    "2b": area_triangulo,
+    "2c": area_circulo,
+    "3": media_aritimetica,
+    "4a": juros_simples,
+    "4b": conta_total,
+    "5": fahrenheit_celsius
+}
+
+def main ():
+    while True:
+        user_input = input("Qual questao voce quer ver?")
+        if user_input not in opcoes:
+            print("As unicas questoes sao 1,2a,2b,3,4a,4b,5")
+            continue
+        else:
+            print(opcoes[user_input]())
+            
+            p = input("Voce quer continuar? (sim/nao): ")
+            if p != "sim":
+                print("Voce finalizou a sessao")
+                break
+
+
+if __name__ == "__main__":
+    main()
