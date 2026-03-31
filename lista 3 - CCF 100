@@ -1,0 +1,19 @@
+def q1():
+    vm = int(input("Qual é a velocidade máxima da via? "))
+    v = int(input("Qual velocidade que você passou? "))
+    
+    excesso = v - vm
+
+    if excesso <= 0:
+        return "Você não pagará multa!"
+    elif excesso <= 10:
+        return "Você pagará 50 reais de multa"
+    elif excesso <= 30:
+        return "Você pagará 100 reais de multa"
+    else:
+        return "Você pagará 200 reais de multa"
+    
+def q2():
+    p1 = input("Qual seu sexo (m/f)")
+    p2 = input("Qual seu tempo de trabalho")
+    
