@@ -1,0 +1,29 @@
+def q1():
+# Faça um programa que solicite de entrada um valor N inteiro e positivo, calcule eescreva o valor de E, como a fórmula abaixo:E = 1/1 + 1 /2 + 1/3 + ... + 1/N
+    print("Usando essa fórmula E = 1/1 + 1 /2 + 1/3 + ... + 1/N iremos calcular um número E com seu denominador N")
+    n = int(input("Digite um número inteiro e não nulo:"))
+    e = 0
+    contador = 1
+
+    while contador <= n:
+        e += (1/contador)
+        contador +=1 
+
+    return f"O valor de e é igual {e:.2}"
+
+def q2():
+#Faça um programa que calcule o fatorial de um número inteiro fornecido pelo usuário. A saída deve ser conforme o exemplo abaixo: Fatorial de: 5 5! = 5 * 4 * 3 * 2 * 1 = 120
+    n = int(input("Digite um número inteiro: "))
+    resultado = 1
+    contador = n 
+    texto = "" 
+
+    while contador >= 1:
+        resultado *= contador
+        if contador == n:
+            texto = str(contador)
+        else:
+            texto = texto + " * " + str(contador)
+        contador -= 1
+
+    return f"{n}! = {texto} = {resultado}"
