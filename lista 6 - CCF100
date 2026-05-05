@@ -1,0 +1,112 @@
+#QUESTAO 1
+# Variaveis 
+total_geral = 0
+continuar = "s"
+
+print("--- Sistema de Caixa do Mercado---")
+
+# Loop enquanto usuário quiser continuar
+while continuar == "s":
+    # Entrada de produtos
+    nome_produto = input("Nome do produto:")
+    quantidade = int(input(f"Quantidade de {nome_produto}:"))
+    preco_unitario = float(input(f"Preço unitário de {nome_produto}: R$"))
+
+    # Cálculo total do produto atual
+    valor_produto = quantidade * preco_unitario
+    total_geral += valor_produto
+
+    # Exibição subtotal do produto
+    print(f"Subtotal de {nome_produto}: R$ {valor_produto}:") 
+
+    # Pergunta se o usuário deseja continuar
+    continuar = input("Você deseja adicionar outro produto? (s/n):")
+
+print("-" * 30)
+print(f"O valor total da compra: R$ {total_geral}:")
+print("-" * 30)
+
+#QUESTAO 2
+contador = 0
+temp = 0
+x = 75
+
+while temp < x:
+    temp1 = float(input("Digite o aumento da temperatura: "))
+    
+    if temp1 > 0:
+        contador += 1
+        temp += temp1
+    else:
+        print("Digite uma temperatura válida")
+
+print(f"A temperatura final atingida foi {temp}, a quantidade de ciclos foi {contador} e o processo de pasteurização foi encerrado!")
+
+tempf = temp - x
+
+if temp > x:
+    print(f"A temperatura ultrapassou o valor ideal em {tempf}")
+else:
+    print("A temperatura estava ideal")
+
+#QUESTAO 3
+minuto = 1
+
+while minuto <= 15:
+    temp = int(input(f"Digite a temperatura no minuto {minuto}: "))
+
+    if temp < 72:
+        print(f"Temperatura muito baixa no minuto {minuto}. Processo interrompido.")
+        break
+    elif temp > 75:
+        print(f"Temperatura muito alta no minuto {minuto}. Processo interrompido.")
+        break
+    else:
+        print(f"Minuto {minuto}: temperatura OK.")
+    
+    minuto += 1
+
+if minuto > 15:
+    print("Pasteurização concluída com sucesso. Leite próprio para consumo.")
+
+#QUESTAO 4
+heroi = 100
+dragao = 150
+
+
+print("--- BATALHA CONTRA O DRAGÃO ---")
+print("1.Começar")
+print("2.Sair")
+escolha = int(input("Qual opção você escolhe?"))
+
+
+if escolha == 1:
+    while heroi >= 1 and dragao >= 1:
+        print("--- Menu do herói ---")
+        print("1.Bater")
+        print("2.Defender")
+        decisao = int(input("Qual ação irá fazer?"))
+        if decisao == 1:
+            print("Você deu uma espadada no dragão!")
+            print("Você tomou uma baforada do dragão! (-15 de vida)")
+            heroi -= 15
+            dragao -= 20
+        elif decisao == 2:
+            print("Você defendeu a baforada!(-7 de vida)")
+            heroi -= 7
+        else:
+            print("Selecione uma opção válida!")
+        print("Vida do dragão:", dragao)
+        print("Vida do herói", heroi)
+
+elif escolha == 2:
+    print("Até mais!")
+else:
+
+    print("Escolha uma opção válida!")
+
+if heroi <= 0:
+    print("O herói morreu! GAME OVER...")
+
+if dragao <= 0:
+    print("Você derrotou o dragão!")
