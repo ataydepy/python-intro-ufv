@@ -1,0 +1,77 @@
+# Questão 1
+import random
+
+soma = 0
+p = input("Você deseja jogar? s/n: ")
+
+while p == "s":
+    n = random.randint(1, 6)
+    m = random.randint(1, 6)
+    soma = n + m
+    
+    print(f"Dados: {n} e {m}")
+    print(f"Soma: {soma}")
+    
+    if soma == 7 or soma == 11:
+        print("Vitória!")
+    else:
+        print("Derrota!")
+        
+    p = input("Você deseja jogar novamente? s/n: ")
+
+print("Fechando o programa...")
+
+# Questão 2
+import math
+print("Cálculo da Hipotenusa")
+
+c1 = int(input("Digite o valor do primeiro cateto:"))
+c2 = int(input("Digite o valor do primeiro cateto:"))
+sq = (c1) ** 2 + (c2) ** 2
+h = math.sqrt(sq)
+print(f"A hipotenusa é {round(h,2)}")
+
+# Questão 3
+resposta = "s"
+while resposta == "s":
+    cid1 = input("Digite o nome da primeira cidade:")
+    x1 = int(input("Digite a coordenada x da primeira cidade:"))
+    y1 = int(input("Digite a coordenada y da primeira cidade:"))
+
+    cid2 = input("Digite o nome da segunda cidade:")
+    x2 = int(input("Digite a coordenada x da segunda cidade:"))
+    y2 = int(input("Digite a coordenada y da segunda cidade:"))
+
+    d = math.sqrt((x2-x1)**2 + (y2-y1)**2)
+
+    if d <= 30:
+        print(f"Distância curta!{round(d,2)}km")
+    elif 50 < d <= 150:
+        print(f"Distância média!{round(d,2)}km")
+    elif d > 150:
+        print(f"Distância longa!{round(d,2)}km")
+    resposta = input("Você deseja continuar? s/n")
+    if resposta == "n":
+        print("Fechando o programa...")
+        break
+
+# Questão  4
+from datetime import datetime
+
+print("=== SISTEMA DE AGENDAMENTO DA CLÍNICA ===")
+
+for i in range(1, 6):
+    print(f"\n--- Agendamento {i} de 5 ---")
+    nome = input("Nome do paciente: ")
+    data_str = input("Data da consulta (DD/MM/AAAA): ")
+    
+    data_atual = datetime.now().date()
+    data_consulta = datetime.strptime(data_str, "%d/%m/%Y").date()
+    dias_restantes = (data_consulta - data_atual).days
+    
+    print(f"\n● Nome do paciente: {nome}")
+    print(f"● Data atual: {data_atual.strftime('%d/%m/%Y')}")
+    print(f"● Data da consulta: {data_str}")
+    print(f"● Quantidade de dias restantes: {dias_restantes}")
+
+print("\n=== Processo encerrado ===")
