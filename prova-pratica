@@ -1,0 +1,47 @@
+#questao 1-
+contador = 1
+while contador <= 10:
+    nome = input("Digite o nome do vendedor:")
+    vendas = int(input("Digite o número de vendas do vendedor na semana:"))
+    valor_total = float(input("Digite o valor total das vendas:"))
+    comissao = 0.1 * valor_total
+    contador += 1
+    print(f"O vendedor {nome} vendeu {vendas} produtos, somou {valor_total}R$ para a empresa e sua comissão é de {comissao}R$")
+    
+# questao 2
+p = input("Você deseja utilizar o programa? s/n")
+while p == "s":
+    data = int(input("Digite o dia de seu pagamento:"))
+    valor_m = float(input("Digite o valor de sua mensalidade:"))
+    if data <=10:
+        valor_com_desconto = (0.95 * valor_m)
+        print(valor_com_desconto)
+
+    elif 11 <= data <= 31:
+        valor_com_acrescimo = (1.02 * valor_m)
+        print(valor_com_acrescimo)
+    else:
+        print("Digite a data corretamente!")
+    
+    p = input("Você deseja continuar? s/n")
+
+print("Encerrando programa...")
+
+# questao 3
+import random
+soma = 0
+contador = 0
+
+while contador <= 10:
+    x = random.randint(0,40)
+    soma += x 
+    if x > 30:
+        print(f"Alerta! Temperatura muito alta! {x} graus")
+    else:
+        print(f"Temperatura normal! {x} graus")
+    contador +=1
+
+media = soma/10
+print(f"A média calculada foi de {media} graus!")
+
+
