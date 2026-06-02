@@ -1,0 +1,60 @@
+# Questão 1
+X = []
+
+for i in range(1, 31):
+    X.append(i)
+
+print(X)
+
+# Questão 2
+
+# lista vazia
+x = []
+
+# loop das perguntas
+for cont in range(10):
+    p = int(input("Digite o valor:"))
+    x.append(p)
+
+# printando valores positivos
+print("Valores positivos:")
+for i in x:
+    if i > 0:
+        print(i)
+        
+
+# Questão 3
+y = []
+for i in range(1,21):
+    if i % 2 != 0:
+        y.append(i)
+
+print("Quadrado dos impares")
+for n in y:
+    print(n**2)
+
+
+# Questão 4
+Y = []
+for cont in range(10):
+    q = float(input("Qual altura do atleta?"))
+    Y.append(q)
+
+media = sum(Y)/10
+
+print("Alturas acima da média:")
+for altura in Y:
+    if altura > media:
+        print(altura)
+ 
+
+# Questão 5
+Z = []
+for cont in range(5):
+    Q = int(input("Digite o valor: "))
+    Z.append(Q)
+
+print("Vetor original:", Z)
+
+Z[0], Z[4] = Z[4], Z[0]
+print("Vetor modificado:", Z)
