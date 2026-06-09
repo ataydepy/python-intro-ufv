@@ -1,0 +1,55 @@
+# Questão 1
+matriz = []
+nula = True
+
+for i in range(3):
+    linha = []
+
+    for j in range(3):
+        valor = int(input(f"Digite o elemento da posição M[{i}][{j}]: "))
+        linha.append(valor)
+
+        if valor != 0:
+            nula = False
+            
+    matriz.append(linha)
+
+print("\n--- RESULTADO ---")
+if nula:
+    print("A matriz é nula!")
+else:
+    print("A matriz não é nula.")
+
+
+# Questão 2
+diagonal = []
+matriz = []
+for i in range(5):
+    linha = []
+
+    for j in range(5):
+        valor = int(input(f"Digite o elemento da posição M[{i}][{j}]: "))
+        linha.append(valor)
+
+        if i == j:
+            diagonal.append(valor)
+
+matriz.append(linha)
+print(diagonal)
+
+# Questão 3
+matriz = []
+n = int(input("Digite o valor que você quer ver a tabuada:"))
+
+for i in range(1,11):
+    coluna1 = n
+    coluna2 = i
+    coluna3 = n * i
+
+    linha = [coluna1, coluna2, coluna3]
+    matriz.append(linha)
+
+for linha in matriz:
+    print(linha)
+
+# Questão 4
