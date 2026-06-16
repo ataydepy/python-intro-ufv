@@ -53,3 +53,90 @@ for linha in matriz:
     print(linha)
 
 # Questão 4
+Questão 4
+
+matriz = []
+
+for i in range(4):
+linha = []
+for j in range(5):
+valor = int(input(f"Digite o elemento da posição M[{i}][{j}]: "))
+linha.append(valor)
+matriz.append(linha)
+
+print("\nMatriz:")
+for linha in matriz:
+print(linha)
+
+numero = int(input("\nDigite um número para buscar na matriz: "))
+encontrado = False
+
+for i in range(4):
+for j in range(5):
+if matriz[i][j] == numero:
+print(f"Número encontrado na posição M[{i}][{j}]")
+encontrado = True
+
+if not encontrado:
+print("Número não está na matriz")
+
+Questão 5
+
+import random
+
+N = int(input("\nDigite o número de linhas (N): "))
+M = int(input("Digite o número de colunas (M): "))
+
+matriz = []
+
+for i in range(N):
+linha = []
+for j in range(M):
+linha.append(random.randint(0, 100))
+matriz.append(linha)
+
+print("\nMatriz gerada:")
+for linha in matriz:
+print(linha)
+
+Questão 6
+
+matriz = []
+soma = 0
+
+for i in range(3):
+linha = []
+for j in range(6):
+valor = int(input(f"Digite o elemento da posição M[{i}][{j}]: "))
+linha.append(valor)
+soma += valor
+matriz.append(linha)
+
+print("\nMatriz:")
+for linha in matriz:
+print(linha)
+
+print("\nSoma de todos os elementos:", soma)
+
+Questão 7
+
+matriz = []
+identidade = True
+
+for i in range(4):
+linha = []
+for j in range(4):
+valor = int(input(f"Digite o elemento da posição M[{i}][{j}]: "))
+linha.append(valor)
+if (i == j and valor != 1) or (i != j and valor != 0):
+identidade = False
+matriz.append(linha)
+
+print("\nMatriz:")
+for linha in matriz:
+print(linha)
+
+if identidade:
+print("\nA matriz é identidade")
+else:
+print("\nA matriz não é identidade")
